@@ -12,13 +12,6 @@ let surnames=['Abad','Abalos','Abarca','Abendano','Abila','Abina','Abitua','Aboi
 var sustantives=['Persona','Nombre','Varón','Hombre','Mujer','Abuelo','Padre','Madre','Hermano','Hermana','Hijo','Hija','Suegro','Nuera','Nieto','Sobrino','Viuda','Extraño','Huésped','Significado','Cabeza','Cabeza','Pelo','Ceja','Oído','Ojo','Nariz','Boca','Labio','Diente','Lengua','Mejilla','Mandíbula','Mentón','Barba','Cuello','Hombro','Brazo','Codo','Antebrazo','Mano','Mano','Uña','Seno','Ubre','Costilla','Regazo','Ombligo','Bajo Vientre','Vulva','Pene','Cojones','Culo','Nalga','Pierna','Pie','Rodilla','Rótula','Talón','Significado','Cuerpo','Cadáver','La Muerte','Piel','Piel','Hueso','Tendón','Carne','Sangre','Sangre','Médula','Glándula','Glándula','Pulmón','Corazón','Hígado','Bazo','Hiel','Lomos','Matriz','Intestinos','Intestinos','Excremento','Significado','Mente','Fuerza Vital','Alma','Sueño','Sudor','Lágrima','Dolor','Horror','Odio','Pecado','Copia','Significado','Sol','Luna/Mes','Estrella','Cielo/Nube','Luz','Espacio','Significado','Alba','Mañana','Día','La Tarde','Noche','Ayer','Significado','Año','Año','Primavera','Verano','Invierno','Significado','Viento Del Norte','Nieve','Granizo','Hielo','Niebla','Relámpago','Trueno','Significado','Entero','Parte','Significado','Tierra','Piedra','Diente','Monte','Campo','Estepa','Bosque','Fondo','Estanque','Charco','Marisma','Mar','Lago','Río','Agua','Espuma','Significado','Hoguera','Fuego','Humo','Polvo','Fuego','Significado','Árbol','Tallo','Hoja','Rama','Espina','Raíz','Resina','Cola','Significado','Roble','Roble','Haya','Fresno','Abedul','Arce','Aliso','Álamo Temblón','Tejo','Carpe','Olmo','Olmo','Tilo','Pino','Pino','Abeto','Avellana','Nuez','Manzana','Cereza','Nabo','Ajo','Baya','Mora','Tallo','Heno','Significado','Hormiga','Abeja','Avispa','Mosca','Pulga','Liendre','Vierme','Piojo','Vierme','Significado','Pez','Salmón','Serpiente','Serpiente','Concha','Pez','Significado','Ave','Águila','Cuervo','Tordo','Pato','Ganso','Gallo Silvestre','Golondrina','Grulla','Nido','Significado','Bestia','Animal Joven','Toro','Oso','Lobo','Verraco','Castor','Nutria','Ardilla','Erizo','Serpiente','Cría','Tortuga','Lince','Ratón','Zorro','Significado','Perro','Caballo','Animal De Arado','Vaca','Vaca','Toro','Cerdo','Puerco','Cabra','Cabra','Cabrío','Cabrito','Cabra','Oveja','Cordero','Cordero','Cornudo','Significado','Huevo','Miel','Miel','Leche','Leche','Manteca','Grasa','Cuero','Lana','Cuerno','Panal','Nata','Significado','Grano','Harina','Cebada','Cosecha','Cosecha','Trigo','Centeno','Cebada','Cebada','Avena','Judía','Guisante','Guisante','Cerveza','Cereal','Significado','Lino','Sal','Oro','Metal','Significado','Hacha','Arco','Pica','Gancho','Cuchillo','Herramienta','Azada','Bolsa','Tubo','Eje','Rueda De Molino','Rueda De Carro','Nave','Bastón','Rueda','Yugo','Arado De Palo','Significado','Casa','Morada','Techo','Viga','Esquina','Ángulo','Puerta','Valla','Carretera','Fuerte','Viga','Significado','Tribu','Gente','Pueblo','Gobernante','Poder','Ley','Saludo','Riqueza','Tarifa','Precio','Trifulca','Guerra','Victoria','Dios','Poder','Trabajo'];
 var adjetives=['Despierto','Hermoso','Grande','Amargo','Muerto','Profundo','Sucio','Caro','Lejano','Rápido','Gordo','Lleno','Contento','Bueno','Feliz','Duro','Saludable','Pesado','Alto','Caliente','Largo','Nuevo','Cortés','Rico','Correcto','Áspero','Seguro','Mismo','Simple','Soltero','Fuerte','Alto','Grueso','Dormido','Feo','Pequeño','Dulce','Vivo','Superficial','Limpio','Barato','Cercano','Lento','Flaco','Delgado','Vacío','Triste','Malo','Apenado','Blando','Enfermo','Liviano','Bajo','Frío','Corto','Viejo','Grosero','Pobre','Equivocado','Suave','Liso','Peligroso','Diferente','Complejo','Casado','Débil','Bajo','Delgado'];
 
-
-var selectedName;
-var selectedSurname;
-var fullname;
-var selectedAdjetive;
-var selectedSustantive;
-var movie;
 var espacio=" "
 var directorsList=[];
 var moviesList=[];
@@ -27,51 +20,24 @@ var fullMovieDataList=[];
 
 //in the next following for loops, I am creating random names in order asign directors and names to the movies
 for(let i=0;i<30;i++){
-		let randomNum=Math.random()*1000;
-		let ceilNumName=Math.ceil(randomNum);
-		let ceilNumSur=Math.ceil(randomNum);
-		if(ceilNumName>names.length){
-		do{
-			randomNum=Math.random()*1000
-			ceilNumName=Math.ceil(randomNum)
-		}while(ceilNumName>=names.length)
-	}
-		if(ceilNumSur>surnames.length){
-			do{
-				randomNum=Math.random()*1000
-				ceilNumSur=Math.ceil(randomNum)
-			}while(ceilNumSur>=surnames.length)
-		}
-		selectedName=names[ceilNumName];
-		selectedSurname=surnames[ceilNumSur];
-		fullname=selectedName.concat(espacio, selectedSurname);
+		let random=getRandom(names.length);
+		let selectedName=names[random];
+		random=getRandom(surnames.length)
+		let selectedSurname=surnames[random];
+		let fullname=selectedName.concat(espacio, selectedSurname);
 		directorsList.push(fullname)
 		
 	}
 
 
-for(let i=0;i<500;i++){
-		var randomNum=Math.random()*100
-		var ceilNumSus=Math.ceil(randomNum);
-		var ceilNumAdj=Math.ceil(randomNum)
+for(let i=0;i<100;i++){
 		
-		if(ceilNumSus>sustantives.length){
-		do{
-			randomNum=Math.random()*100
-			ceilNumSus=Math.ceil(randomNum)
-		}while(ceilNumSus>sustantives.length)
-	}
-		if(ceilNumAdj>adjetives.length){
-		do{
-			randomNum=Math.random()*100
-			ceilNumAdj=Math.ceil(randomNum)
-		}while(ceilNumAdj>adjetives.length)
-	}
 
-		
-		selectedSustantive=sustantives[ceilNumSus];
-		selectedAdjetive=adjetives[ceilNumAdj];
-		movie=selectedSustantive.concat(espacio,selectedAdjetive)
+		let random=getRandom(sustantives.length)
+		let selectedSustantive=sustantives[random];
+		random=getRandom(adjetives.length)
+		let selectedAdjetive=adjetives[random];
+		let movie=selectedSustantive.concat(espacio,selectedAdjetive)
 		moviesList.push(movie)
 		
 	}
@@ -89,6 +55,19 @@ for(let i=0;i<moviesList.length;i++){
 	let randomYearList=Math.round(Math.random() * (yearList.length - 0) + 0);
 	var moviesObj= new MovieInfo(moviesList[i],directorsList[randomDirectorList],yearList[randomYearList]);
 	fullMovieDataList.push(moviesObj);
+
+}
+
+function getRandom(lista){
+	let randomNum=Math.random()*100;
+	let ceilRandom=Math.ceil(randomNum);
+	if(ceilRandom>lista){
+		do{
+			randomNum=Math.random()*100
+			ceilRandom=Math.ceil(randomNum)
+		}while(ceilRandom>lista)
+	}
+	return ceilRandom
 
 }
 
